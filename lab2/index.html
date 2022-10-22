@@ -30,7 +30,7 @@
 <input type="text" id="dysk" placeholder="C:\windows\temp" pattern="([a-zA-Z]:\\windows|winnt|win|dos|msdos)(\\[0-9a-z]+)?"	required>
 
 <p>to samo, co w 7a, ale ma pozwalać na użycie zarówno dużych, jak i małych liter (Windows,windows,WinDowS)</p>
-	<input type="text" id="dysk2" placeholder="C:\wIndowS\temp" pattern="^[a-z]:\\(?:[^\\/:*?"<>|\r\n]+\\)*[^\\/:*?"<>|\r\n]*$"	required>
+	<input type="text" id="dysk2" placeholder="C:\wIndowS\temp" pattern="([a-zA-Z]:\\(?i)(windows|winnt|win|dos|msdos))(\\[0-9a-zA-Z]+)?"	required>
 
 <p>ścieżka do pliku w katalogu /etc/ (np. /etc/passwd, /etc/hosts, itp)</p>
 	<input type="text" id="etc" placeholder="/etc/passwd" pattern="(\/etc\/)([a-zA-Z0-9]+)"	required>
