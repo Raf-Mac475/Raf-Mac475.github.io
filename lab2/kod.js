@@ -11,4 +11,9 @@ function WYP()
     document.getElementById("etc").value = '/etc/passwd';
     document.getElementById("ipv6").value = '2001:0db8:0:0:0:0:1428:57ab';
     document.getElementById("telefon").value = '+48123456789'; 
+document.getElementById("data").value = '2022-10-22';
+document.getElementById("roboczy").value = '2022-10-25';
+document.getElementById("godzina12").value = '07:45';
+document.getElementById("godzina24").value = '16:33';
+document.getElementById("color").value = '#12345';
 }
