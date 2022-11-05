@@ -1,18 +1,14 @@
-#box {
-  width: 10%; height: calc(100vh / 10);
-}
+div{height:500px; width:500px; }
+.lista{float:left;}
+.pudlo{float:right;}
 
-#wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  width: 100vh;
-  margin: auto;
-}
-
-#btns {
-  position: absolute;
-  top: 10px; right: 10px;
-}
-
-#num {width: 64px;}
-button {margin: 5px;}
+.gen {
+    border-style: solid;
+    border-width: 5px;
+    border-color: red;
+  }
+  
+  .box {
+      height: 50px;
+      width: 50px;
+  }

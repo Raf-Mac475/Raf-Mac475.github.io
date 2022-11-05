@@ -23,6 +23,7 @@
 <body style="background-color:grey;">
 <h1>Lab3</h1>
 <form>
+<div class="lista">
 <ol ondragstart="">
   <li class="dropzone" id='0' draggable="true">List item 1</li>
   <li class="dropzone" id='1' draggable="true">List item 2</li>
@@ -30,8 +31,14 @@
   <li class="dropzone" id='3' draggable="true">List item 4</li>
   <li class="dropzone" id='4' draggable="true">List item 5</li>
 </ol>
-<div draggable="true" class="resizable"></div>
+</div>
 
+<div class="pudlo">
+        <div class="gen">
+            <button type="button" onclick="setRandomColor()">Nowe Pudelko</button>
+            <div id="box" class="box" draggable="true"/>
+        </div>
+    </div>
 </form>
 
 

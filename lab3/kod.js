@@ -36,6 +36,10 @@ let list;
     }
   });
 
+function setRandomColor() {
+	color = getRandomColor();
+	document.getElementById('box').style.background = color;
+  }
 
 function getRandomColor() {
     var letters = '0123456789ABCDEF'.split('');
