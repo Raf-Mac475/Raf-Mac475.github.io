@@ -4,9 +4,19 @@
 <script src="kod.js" ></script>
 <link rel="stylesheet" href="styl.css">
 <style>
-.draggable {
-    cursor: move;
-    user-select: none;
+[draggable=true] {
+  cursor: move;
+}
+
+.resizable {
+  overflow: scroll;
+  resize: both;
+  max-width: 300px;
+  max-height: 460px;
+  border: 1px solid black;
+  min-width: 50px;
+  min-height: 50px;
+  background-color: skyblue;
 }
 </style>
 </head>
@@ -20,10 +30,8 @@
   <li class="dropzone" id='3' draggable="true">List item 4</li>
   <li class="dropzone" id='4' draggable="true">List item 5</li>
 </ol>
-<div id="btns">
-  <button onclick="adddiv(1)">Add Box</button>
-</div>
-<div id="wrapper"></div>
+<div draggable="true" class="resizable"></div>
+
 </form>
 
 
