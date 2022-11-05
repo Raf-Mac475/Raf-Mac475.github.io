@@ -3,21 +3,23 @@
 <head>
 <script src="kod.js" ></script>
 <link rel="stylesheet" href="styl.css">
+<style>
+.draggable {
+    cursor: move;
+    user-select: none;
+}
+</style>
 </head>
 <body style="background-color:grey;">
 <h1>Lab3</h1>
-<p>Adres e-mail</p>
 <form>
-<div id="list">
-    <div class="draggable">A</div>
-    <div class="draggable">B</div>
-    <div class="draggable">C</div>
-    <div class="draggable">D</div>
-    <div class="draggable">E</div>
-</div>
+<ol ondragstart="">
+<li draggable="true" data-value="data1">List Item 1</li>
+<li draggable="true" data-value="data2">List Item 2</li>
+<li draggable="true" data-value="data3">List Item 3</li>
+</ol>
 </form>
 
-<p></p>
 
 
 </body>

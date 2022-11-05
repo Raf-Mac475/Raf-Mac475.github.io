@@ -17,3 +17,4 @@ document.getElementById("godzina12").value = '07:45';
 document.getElementById("godzina24").value = '16:33';
 document.getElementById("color").value = '#12345';
 }
+
