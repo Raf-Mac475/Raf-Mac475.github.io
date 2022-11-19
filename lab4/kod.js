@@ -187,5 +187,5 @@ function drawTable(filterItems) {
         let data = Object.keys(clientData[0]);
         generateTable(table, filterItems);
         generateTableHead(table, data);
-        document.getElementById("tableDiv")
+        document.getElementById("tableDiv").appendChild(table);
       }
