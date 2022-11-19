@@ -7,6 +7,30 @@
 	</head>
 	<body style="background-color:grey;">
 	<h1>Lab4</h1>
-
+	<form id="addForm" onsubmit="return add(event)">
+      		<label for="name">Name:</label>
+     		<input name="name" type="text" />
+      		<br />
+      		<label for="lastName">Last name:</label>
+      		<input name="lastName" type="text" />
+      		<br />
+      		<label for="age">Age:</label>
+      		<input name="age" type="number" />
+      		<br />
+      		<label for="email">email:</label>
+      		<input name="email" type="email" />
+      		<br />
+      		<label for="pesel">Pesel</label>
+      		<input name="pesel" type="text" />
+      		<br />
+      		<label for="address">Address</label>
+      		<input name="address" type="text" />
+      		<br />
+      		<label for="phoneNumber">Phone Number:</label>
+      		<input name="phoneNumber" type="text" />
+      		<br />
+      		<input id="submitBtn" type="submit" value="Add entry" />
+    	</form>
+    <br />
 	</body>
 </html>
