@@ -8,32 +8,24 @@
 	<body style="background-color:grey;">
 	<h1>Lab4</h1>
 	<form id="addForm" onsubmit="return add(event)">
-      		<label for="name">Name:</label>
-     		<input name="name" type="text" />
-      		<br />
-      		<label for="lastName">Last name:</label>
-      		<input name="lastName" type="text" />
-      		<br />
-      		<label for="age">Age:</label>
-      		<input name="age" type="number" />
-      		<br />
-      		<label for="email">email:</label>
-      		<input name="email" type="email" />
-      		<br />
-      		<label for="pesel">Pesel</label>
-      		<input name="pesel" type="text" />
-      		<br />
-      		<label for="address">Address</label>
-      		<input name="address" type="text" />
-      		<br />
-      		<label for="phoneNumber">Phone Number:</label>
-      		<input name="phoneNumber" type="text" />
-      		<br />
-      		<input id="submitBtn" type="submit" value="Add entry" />
-    	</form>
-    <br />
+<label for="fname">First name:</label>
+       <input type="text" id="fname" name="firstName" placeholder="Rafał" required><br><br>
+        <p></p>
 
-		<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.20/lodash.min.js"></script>
-    		<script src="kod.js"></script>
+        <label for="lname">Last name:</label>
+        <input type="text" id="flast" name="lastName" placeholder="Mackiewicz" required><br><br>
+        <p></p>
+      		<p>Adres e-mail</p>
+<form>
+<input type="email" id="mail" placeholder="email@gmail.com"	required>
+
+<p>Numer telefonu</p>
+<input type="tel" id="telefon" placeholder="+48123456789"	required>
+
+<p></p>
+<input type="submit" value="Submit">
+</form>
+    	</form>
+    <br />	
 	</body>
 </html>
