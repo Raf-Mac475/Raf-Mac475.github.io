@@ -75,3 +75,23 @@ function add(event) {
           );
         };
       }
+
+function search(event) {
+        event.preventDefault();
+
+        let searchInputs = document.getElementById("searchBar").value.split(' ');
+        
+        drawTable(searchInputs);
+      }
+
+      function remove(id) {
+        let request = db
+          .transaction(["client"], "readwrite")
+          .objectStore("client")
+          .delete(id);
+
+        request.onsuccess = function (event) {
+          console.log(`Client ${id} removed...`);
+          drawTable();
+        };
+      }
