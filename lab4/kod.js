@@ -1,3 +1,16 @@
+window.indexedDB =
+        window.indexedDB ||
+        window.mozIndexedDB ||
+        window.webkitIndexedDB ||
+        window.msIndexedDB;
+
+window.IDBTransaction =
+        window.IDBTransaction ||
+        window.webkitIDBTransaction ||
+        window.msIDBTransaction;
+      window.IDBKeyRange =
+        window.IDBKeyRange || window.webkitIDBKeyRange || window.msIDBKeyRange;
+
 if (!window.indexedDB) {
         window.alert(
           "Your browser doesn't support a stable version of IndexedDB."
@@ -21,7 +34,7 @@ if (!window.indexedDB) {
 
 
 let db;
-      let request = window.indexedDB.open("newDatabase", 1);
+      let dbReq = indexedDB.open('myDatabase', 3);
 
       request.onerror = function (event) {
         console.log("error: The database is opened failed");
@@ -112,4 +125,67 @@ function generateTableHead(table, data) {
           th.appendChild(text);
           row.appendChild(th);
         }
+      }
+
+function generateTable(table, filterItems = []) {
+        let objectStore = db.transaction("client").objectStore("client");
+
+        objectStore.openCursor().onsuccess = function (event) {
+          var cursor = event.target.result;
+
+          if (cursor) {
+            console.log(filterItems);
+            if (filterItems.length > 0 && filterItems[0] !== "") {
+              let exists = false;
+              for (let i = 0; i < filterItems.length; i++) {
+                const element = filterItems[i];
+                
+                if (Object.values(cursor.value).includes(element)) {
+                  exists = true
+                }
+              }
+
+              if (!exists) {
+                cursor.continue();
+                return;
+              }
+            }
+
+console.log(cursor.value)
+
+            let row = table.insertRow();
+            let cell = row.insertCell();
+            let text = document.createTextNode(cursor.key);
+            cell.appendChild(text);
+            for (const [key, value] of Object.entries(cursor.value)) {
+              let cell = row.insertCell();
+              let text = document.createTextNode(value);
+              cell.appendChild(text);
+            }
+
+            cell = row.insertCell();
+            let removeButton = document.createElement("button");
+            removeButton.setAttribute("id", "removeButton" + cursor.key);
+            removeButton.setAttribute("onclick", `remove(${cursor.key})`);
+            removeButton.innerHTML = "remove";
+            cell.appendChild(removeButton);
+
+            cursor.continue();
+          } else {
+            console.log("No more data");
+          }
+        };
+      }
+
+function drawTable(filterItems) {
+        if (document.getElementById("tbody") !== null) {
+          document.querySelector("#tbody").remove();
+        }
+
+        let table = document.createElement("table");
+        table.setAttribute("id", "tbody");
+        let data = Object.keys(clientData[0]);
+        generateTable(table, filterItems);
+        generateTableHead(table, data);
+        document.getElementById("tableDiv").appendChild(table);
       }

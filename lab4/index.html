@@ -8,24 +8,19 @@
 	<body style="background-color:grey;">
 	<h1>Lab4</h1>
 	<form id="addForm" onsubmit="return add(event)">
-<label for="fname">First name:</label>
-       <input type="text" id="fname" name="firstName" placeholder="Rafał" required><br><br>
-        <p></p>
-
-        <label for="lname">Last name:</label>
-        <input type="text" id="flast" name="lastName" placeholder="Mackiewicz" required><br><br>
-        <p></p>
-      		<p>Adres e-mail</p>
-<form>
-<input type="email" id="mail" placeholder="email@gmail.com"	required>
-
-<p>Numer telefonu</p>
-<input type="tel" id="telefon" placeholder="+48123456789"	required>
-
-<p></p>
-<input type="submit" value="Submit">
-</form>
-    	</form>
-    <br />	
+      <label for="name">Name:</label>
+      <input name="name" type="text" placeholder="Rafał" required/>
+      <br />
+      <label for="lastName">Last name:</label>
+      <input name="lastName" type="text" placeholder="Mackiewicz" required/>
+      <br />
+      <label for="age">Age:</label>
+      <input name="age" type="number" placeholder="25" required/>
+      <br />
+      <label for="email">email:</label>
+      <input name="email" type="email" placeholder="Rafal@gmail.com" required/>
+      <br />
+      <input id="submitBtn" type="submit" value="Add entry" />
+    </form>
 	</body>
 </html>
