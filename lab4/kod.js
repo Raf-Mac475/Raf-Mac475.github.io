@@ -34,7 +34,7 @@ if (!window.indexedDB) {
 
 
 let db;
-      let dbReq = indexedDB.open('myDatabase', 3);
+      let request = window.indexedDB.open("newDatabase", 3);
 
       request.onerror = function (event) {
         console.log("error: The database is opened failed");
