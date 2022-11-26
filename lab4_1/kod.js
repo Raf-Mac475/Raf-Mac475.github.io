@@ -238,14 +238,16 @@ function generateTable(table, filterItems = []) {
           var cursor = event.target.result;
 
           if (cursor) {
-            console.log(filterItems);
             if (filterItems.length > 0 && filterItems[0] !== "") {
               let exists = false;
               for (let i = 0; i < filterItems.length; i++) {
-                const element = filterItems[i];
-                
-                if (Object.values(cursor.value).includes(element)) {
-                  exists = true
+                const element = filterItems[i].toLowerCase();
+                if (element === "") continue;
+                for (objValue of Object.values(cursor.value)) {
+                  if (objValue.toLowerCase().includes(element)) {
+                    exists = true;
+                    break;
+                  }
                 }
               }
 
@@ -273,6 +275,12 @@ console.log(cursor.value)
             removeButton.setAttribute("onclick", `remove(${cursor.key})`);
             removeButton.innerHTML = "remove";
             cell.appendChild(removeButton);
+
+            let editButton = document.createElement("button");
+            editButton.setAttribute("id", "editButton" + cursor.key);
+            editButton.setAttribute("onclick", `fillEditData(${cursor.key})`);
+            editButton.innerHTML = "edit";
+            cell.appendChild(editButton);
 
             cursor.continue();
           } else {
