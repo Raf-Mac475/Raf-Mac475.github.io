@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="kod.js" ></script>
+		<link rel="stylesheet" href="styl.css">
+		<meta http-equiv="Content-Type" content="text/html; charset = utf-8" />
+	</head>
+	<body style="background-color:grey;">
+	<h1>Lab4</h1>
+	<form id="addForm" onsubmit="return add(event)">
+      <label for="name">Name:</label>
+      <input name="name" type="text" placeholder="Rafał" required/>
+      <br />
+      <label for="lastName">Last name:</label>
+      <input name="lastName" type="text" placeholder="Mackiewicz" required/>
+      <br />
+      <label for="age">Age:</label>
+      <input name="age" type="number" placeholder="25" required/>
+      <br />
+      <label for="email">email:</label>
+      <input name="email" type="email" placeholder="Rafal@gmail.com" required/>
+      <br />
+      <input id="submitBtn" type="submit" value="Add entry" />
+    </form>
+<div id="tableDiv"></div>
+    <br />
+	</body>
+</html>
