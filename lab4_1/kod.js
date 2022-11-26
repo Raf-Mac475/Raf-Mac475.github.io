@@ -119,6 +119,18 @@ function search(event) {
         };
       }
 
+function remove(id) {
+        let request = db
+          .transaction(["client"], "readwrite")
+          .objectStore("client")
+          .delete(id);
+
+        request.onsuccess = function (event) {
+          console.log(`Client ${id} removed...`);
+          drawTable();
+        };
+      }
+
 function editData(event) {
         event.preventDefault();
         let formElements = document.getElementById("addForm");
@@ -276,6 +288,7 @@ function drawTable(filterItems) {
 
         let table = document.createElement("table");
         table.setAttribute("id", "tbody");
+
         let data = Object.keys(clientData[0]);
         generateTable(table, filterItems);
         generateTableHead(table, data);
