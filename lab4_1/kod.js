@@ -81,10 +81,13 @@ function add(event) {
           .transaction(["client"], "readwrite")
           .objectStore("client")
           .add({
-            name: formElements[0].value,
-            lastName: formElements[1].value,
-            age: formElements[2].value,
-            email: formElements[3].value,
+            name: formElements[1].value,
+            lastName: formElements[2].value,
+            age: formElements[3].value,
+            email: formElements[4].value,
+            pesel: formElements[5].value,
+            address: formElements[6].value,
+            phoneNumber: formElements[7].value,
           });
 
         request.onsuccess = function (event) {
@@ -301,4 +304,60 @@ function drawTable(filterItems) {
         generateTable(table, filterItems);
         generateTableHead(table, data);
         document.getElementById("tableDiv").appendChild(table);
+      }
+	  
+	const NAMES = [
+        "Krystian",
+        "Marcin",
+        "Stefan",
+        "Karol",
+        "Mikolaj",
+        "Rafal",
+        "Bartek",
+        "Olek",
+        "Michal",
+        "Adam",
+      ];
+	const SURNAMES = [
+        "Kowalski",
+        "Nowak",
+        "Kwiatkowski",
+        "Lewandowski",
+        "Szczęsny",
+        "Piłsudzki",
+        "Dmowski",
+      ];
+	const ADDRESSES = [
+        "Mickiewicza",
+        "Słowackiego",
+        "Wschodnia",
+        "Nowomiejska",
+        "Miejska",
+        "Piotrkowska",
+        "Wiatraki",
+      ];	  
+	  
+function RandomCell() {
+        let minAge = Math.ceil(18);
+        let maxAge = Math.floor(100);
+
+        let formElements = document.getElementById("addForm");
+
+        formElements[1].value = NAMES[Math.floor(Math.random() * NAMES.length)];
+        formElements[2].value =
+          SURNAMES[Math.floor(Math.random() * SURNAMES.length)];
+        formElements[3].value = `${Math.floor(
+          Math.random() * (maxAge - minAge) + minAge
+        )}`;
+        formElements[4].value = `${NAMES[
+          Math.floor(Math.random() * NAMES.length)
+        ].toLowerCase()}@gmail.com`;
+        formElements[5].value = `${Math.floor(
+          5000000000 + Math.random() * 75000000000
+        )}`;
+        formElements[6].value =
+          ADDRESSES[Math.floor(Math.random() * ADDRESSES.length)];
+        formElements[7].value = `${Math.floor(
+          888000000 + Math.random() * 60000000
+        )}`;
       }
