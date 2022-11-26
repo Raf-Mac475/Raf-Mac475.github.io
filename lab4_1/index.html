@@ -6,8 +6,10 @@
 		<meta http-equiv="Content-Type" content="text/html; charset = utf-8" />
 	</head>
 	<body style="background-color:grey;">
-	<h1>Lab4</h1>
+	<h1>Lab4_1</h1>
 	<form id="addForm" onsubmit="return add(event)">
+	<input id="idInput" name="id" type="number" style="visibility: hidden" />
+      <br />
       <label for="name">Name:</label>
       <input name="name" type="text" placeholder="Rafał" required/>
       <br />
@@ -19,6 +21,35 @@
       <br />
       <label for="email">email:</label>
       <input name="email" type="email" placeholder="Rafal@gmail.com" required/>
+      <br />
+      <label for="pesel">Pesel</label>
+      <input
+        id="peselInput"
+        class="data"
+        name="pesel"
+        type="text"
+        pattern="^[0-9]{11}$"
+        required
+      />
+      <br />
+      <label for="address">Address</label>
+      <input
+        id="addressInput"
+        class="data"
+        name="address"
+        type="text"
+        required
+      />
+      <br />
+      <label for="phoneNumber">Phone Number:</label>
+      <input
+        id="phoneNumberInput"
+        class="data"
+        name="phoneNumber"
+        type="text"
+        pattern="[0-9]{9}"
+        required
+      />
       <br />
       <input id="submitBtn" type="submit" value="Add entry" />
     </form>

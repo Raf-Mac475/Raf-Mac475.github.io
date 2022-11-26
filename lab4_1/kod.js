@@ -20,15 +20,21 @@ if (!window.indexedDB) {
       const clientData = [
         {
           name: "Rafał",
-          lastName: "Mackiewicz",
-          age: "20",
-          email: "Rafal@gmail.com",
+          lastName: "Nowak",
+          age: "18",
+          email: "rafal@gmail.com",
+          pesel: "32145678901",
+          address: "Mickiewicza 1",
+          phoneNumber: "111222333",
         },
         {
           name: "Patryk",
           lastName: "Kowalski",
-          age: "30",
-          email: "Patryk@gmail.com",
+          age: "26",
+          email: "patryk@gmail.com",
+          pesel: "12347658209",
+          address: "Słowackiego 1",
+          phoneNumber: "333444555",
         },
       ];
 
@@ -55,8 +61,12 @@ let db;
         objectStore.createIndex("name", "name", { unique: false });
         objectStore.createIndex("lastName", "lastName", { unique: false });
         objectStore.createIndex("age", "age", { unique: false });
-        objectStore.createIndex("email", "email", { unique: true });
-
+        objectStore.createIndex("email", "email", { unique: false });
+        objectStore.createIndex("pesel", "pesel", { unique: false });
+        objectStore.createIndex("address", "address", { unique: false });
+        objectStore.createIndex("phoneNumber", "phoneNumber", {
+          unique: false,
+        });
         for (var i in clientData) {
           objectStore.add(clientData[i]);
         }
