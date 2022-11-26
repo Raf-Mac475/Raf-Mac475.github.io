@@ -165,6 +165,42 @@ function editData(event) {
         };
       }
 
+function cancelEdit(event) {
+        event.preventDefault();
+        document.getElementById("editBtn").disabled = true;
+        document.getElementById("cancelBtn").disabled = true;
+        document.getElementById("submitBtn").disabled = false;
+      }
+
+      function fillEditData(id) {
+        document.getElementById("submitBtn").disabled = true;
+        document.getElementById("editBtn").disabled = false;
+        document.getElementById("cancelBtn").disabled = false;
+
+        var objectStore = db
+          .transaction(["client"], "readwrite")
+          .objectStore("client");
+
+        var request = objectStore.get(id);
+        request.onerror = function (event) {
+          // Handle errors!
+          console.log("Something went wrong");
+        };
+        request.onsuccess = function (event) {
+          // Get the old value that we want to update
+          let data = event.target.result;
+
+          document.getElementById("idInput").value = id;
+          document.getElementById("nameInput").value = data.name;
+          document.getElementById("lastNameInput").value = data.lastName;
+          document.getElementById("ageInput").value = data.age;
+          document.getElementById("emailInput").value = data.email;
+          document.getElementById("peselInput").value = data.pesel;
+          document.getElementById("addressInput").value = data.address;
+          document.getElementById("phoneNumberInput").value = data.phoneNumber;
+        };
+      }
+
 function generateTableHead(table, data) {
         let thead = table.createTHead();
         let row = thead.insertRow();
