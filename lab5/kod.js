@@ -329,6 +329,10 @@ function drawTable(filterItems) {
         "Szczęsny",
         "Piłsudzki",
         "Dmowski",
+		"Ambroziak",
+		"Sosna",
+		"Puzia",
+		
       ];
 	const ADDRESSES = [
         "Mickiewicza",
