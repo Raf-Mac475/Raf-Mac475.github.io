@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="kod.js" ></script>
+		<link rel="stylesheet" href="styl.css">
+		<meta http-equiv="Content-Type" content="text/html; charset = utf-8" />
+	</head>
+	<body style="background-color:grey;">
+	<h1>Lab4_1</h1>
+	<form id="addForm" onsubmit="return add(event)">
+	<input 
+		id="idInput" 
+		name="id" 
+		type="number" 
+		style="visibility: hidden" />
+      <br />
+      <label for="name">Name:</label>
+      <input 
+		id="nameInput" 
+		name="name" 
+		type="text" 
+		placeholder="Rafał" required/>
+      <br />
+      <label for="lastName">Last name:</label>
+      <input 
+		id="lastNameInput" 
+		name="lastName" 
+		type="text" 
+		placeholder="Mackiewicz" required/>
+      <br />
+      <label for="age">Age:</label>
+      <input 
+		id="ageInput" 
+		name="age" 
+		type="number" 
+		placeholder="25" required/>
+      <br />
+      <label for="email">email:</label>
+      <input 
+		id="emailInput" 
+		name="email" 
+		type="email" 
+		placeholder="Rafal@gmail.com" required/>
+      <br />
+      <label for="pesel">Pesel</label>
+      <input
+        id="peselInput"
+        class="data"
+        name="pesel"
+        type="text"
+        pattern="^[0-9]{11}$"
+		placeholder="98080807123"
+        required
+      />
+      <br />
+      <label for="address">Address</label>
+      <input
+        id="addressInput"
+        class="data"
+        name="address"
+        type="text"
+		placeholder="Złota"
+        required
+      />
+      <br />
+      <label for="phoneNumber">Phone Number:</label>
+      <input
+        id="phoneNumberInput"
+        class="data"
+        name="phoneNumber"
+        type="text"
+        pattern="[0-9]{9}"
+		placeholder="111222333"
+        required
+      />
+      <br />
+      <input id="submitBtn" type="submit" value="Add entry" />
+    </form>
+<button id="editBtn" onclick="editData(event)" disabled>Edit entry</button>
+<button id="cancelBtn" onclick="cancelEdit(event)" disabled>
+      Cancel Edit
+    </button>
+    <div id="jsonForm"></div>
+	<br />
+    <br />
+    <button onclick="return RandomCell()">Fill information</button>
+    <br />
+    <br />
+<div id="tableDiv"></div>
+    <br />
+	</body>
+</html>
