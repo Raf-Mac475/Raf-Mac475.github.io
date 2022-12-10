@@ -317,6 +317,9 @@ function drawTable(filterItems) {
         "Olek",
         "Michal",
         "Adam",
+		"Mieczyslaw",
+		"Agata",
+		"Monika",
       ];
 	const SURNAMES = [
         "Kowalski",
