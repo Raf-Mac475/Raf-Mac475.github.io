@@ -19,7 +19,7 @@ if (!window.indexedDB) {
 
       const clientData = [
         {
-          name: "Rafał",
+          name: "Rafal",
           lastName: "Nowak",
           age: "18",
           email: "rafal@gmail.com",
