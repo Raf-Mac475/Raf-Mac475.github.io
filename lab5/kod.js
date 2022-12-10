@@ -326,8 +326,8 @@ function drawTable(filterItems) {
         "Nowak",
         "Kwiatkowski",
         "Lewandowski",
-        "Szczęsny",
-        "Piłsudzki",
+        "Szczesny",
+        "Pilsudzki",
         "Dmowski",
 		"Ambroziak",
 		"Sosna",
@@ -336,7 +336,7 @@ function drawTable(filterItems) {
       ];
 	const ADDRESSES = [
         "Mickiewicza",
-        "Słowackiego",
+        "Slowackiego",
         "Wschodnia",
         "Nowomiejska",
         "Miejska",
