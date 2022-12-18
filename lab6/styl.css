@@ -1,3 +1,11 @@
 p { 
-  display: table-row;  
+  display: table-row;   
 }
+
+.data:valid {
+        border: 2px solid green;
+      }
+
+      .data:invalid {
+        border: 2px solid red;
+      }

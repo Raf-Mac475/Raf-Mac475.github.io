@@ -130,18 +130,6 @@ function remove(id) {
         };
       }
 
-function remove(id) {
-        let request = db
-          .transaction(["client"], "readwrite")
-          .objectStore("client")
-          .delete(id);
-
-        request.onsuccess = function (event) {
-          console.log(`Client ${id} removed...`);
-          drawTable();
-        };
-      }
-
 function editData(event) {
         event.preventDefault();
         let formElements = document.getElementById("addForm");
@@ -195,7 +183,7 @@ function cancelEdit(event) {
         document.getElementById("submitBtn").disabled = false;
       }
 
-      function fillEditData(id) {
+function fillEditData(id) {
         document.getElementById("submitBtn").disabled = true;
         document.getElementById("editBtn").disabled = false;
         document.getElementById("cancelBtn").disabled = false;
