@@ -339,6 +339,7 @@ function drawTable(filterItems) {
         "Piotrkowska",
         "Wiatraki",
 		"Wiejska",
+		"Targowa",
       ];	  
 	  
 function RandomCell() {
