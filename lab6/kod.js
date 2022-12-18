@@ -118,7 +118,7 @@ function search(event) {
           drawTable(event.target.value.split(" "));
         });
 
-function remove(id) {
+      function remove(id) {
         let request = db
           .transaction(["client"], "readwrite")
           .objectStore("client")
@@ -256,8 +256,6 @@ function generateTable(table, filterItems = []) {
               }
             }
 
-console.log(cursor.value)
-
             let row = table.insertRow();
             let cell = row.insertCell();
             let text = document.createTextNode(cursor.key);
@@ -269,6 +267,7 @@ console.log(cursor.value)
             }
 
             cell = row.insertCell();
+
             let removeButton = document.createElement("button");
             removeButton.setAttribute("id", "removeButton" + cursor.key);
             removeButton.setAttribute("onclick", `remove(${cursor.key})`);
