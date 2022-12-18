@@ -49,8 +49,15 @@ let db;
       request.onsuccess = function (event) {
         db = request.result;
         console.log("success: The database " + db + " is opened successfully");
-        drawTable();
-      };
+     
+	  
+document
+        .getElementById("searchBar")
+        .addEventListener("input", (event) => {
+          drawTable(event.target.value.split(" "));
+        });	
+   drawTable();
+      };		
 
       request.onupgradeneeded = function (event) {
         var db = event.target.result;
@@ -111,12 +118,6 @@ function search(event) {
 
         drawTable(searchInputs);
       }
-
-      document
-        .getElementById("searchBar")
-        .addEventListener("input", (event) => {
-          drawTable(event.target.value.split(" "));
-        });
 
       function remove(id) {
         let request = db
